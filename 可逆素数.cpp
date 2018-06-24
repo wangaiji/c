@@ -1,0 +1,46 @@
+#include"stdio.h"
+#include"math.h"
+int main()
+{
+	int n,x,i,flag,y,t,m;
+	scanf("%d",&n);
+	while(n--)
+	{
+		flag=1;
+		y=0;
+		scanf("%d",&x);
+		m=x;
+		if(x==2){
+		   printf("2是可逆素数\n");
+		   continue;
+		}
+		if(x==1||x==0){
+  		   printf("%d不是素数\n",x);
+  		   continue;	
+		}
+		for(i=2;i<=sqrt(x);i++)
+		if(x%i==0) 
+		{
+			flag=0;
+			printf("%d不是素数\n",x);
+			break;
+		}
+		if(flag==1)
+		{
+		 	  while(x>0)
+  			  {
+  			  	t=x%10;
+  			  	x=x/10;
+  			  	y=y*10+t;
+                          }
+			  for(i=2;i<=sqrt(y);i++)
+		          if(y%i==0) 
+		          {
+	          	     printf("%d是素数，但不是可逆素数\n",m);
+			     break;
+                          }
+			  if(i>sqrt(y))
+			  printf("%d是可逆素数\n",m);
+                }
+	}	
+}

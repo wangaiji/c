@@ -4,7 +4,7 @@ struct node
 {
 	int num;
 	char name[100];
-	char author[100];
+	char author[100];//Ҫע�⺺�ִ洢 
 	char place[100];
 	int year;
 	int month;

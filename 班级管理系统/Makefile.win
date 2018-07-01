@@ -1,0 +1,52 @@
+# Project: 学生管理系统
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o 文件的录入和写入.o 学生.o 密码的输入和验证.o 链表基本操作.o 输出和保存.o 管理员办理事务.o 教师.o 管理员.o
+LINKOBJ  = main.o 文件的录入和写入.o 学生.o 密码的输入和验证.o 链表基本操作.o 输出和保存.o 管理员办理事务.o 教师.o 管理员.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 班级管理系统.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+文件的录入和写入.o: 文件的录入和写入.c
+	$(CC) -c 文件的录入和写入.c -o 文件的录入和写入.o $(CFLAGS)
+
+学生.o: 学生.c
+	$(CC) -c 学生.c -o 学生.o $(CFLAGS)
+
+密码的输入和验证.o: 密码的输入和验证.c
+	$(CC) -c 密码的输入和验证.c -o 密码的输入和验证.o $(CFLAGS)
+
+链表基本操作.o: 链表基本操作.c
+	$(CC) -c 链表基本操作.c -o 链表基本操作.o $(CFLAGS)
+
+输出和保存.o: 输出和保存.c
+	$(CC) -c 输出和保存.c -o 输出和保存.o $(CFLAGS)
+
+管理员办理事务.o: 管理员办理事务.c
+	$(CC) -c 管理员办理事务.c -o 管理员办理事务.o $(CFLAGS)
+
+教师.o: 教师.c
+	$(CC) -c 教师.c -o 教师.o $(CFLAGS)
+
+管理员.o: 管理员.c
+	$(CC) -c 管理员.c -o 管理员.o $(CFLAGS)
